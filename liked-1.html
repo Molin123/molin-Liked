@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+	<head>
+		<title>点赞动效demo</title>
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<meta name="robots" content="nofollow">
+		<meta charset="UTF-8">
+		<style>
+			.container{
+				position: relative;
+				text-align: center;
+				width: 200px;
+				height: 110px;
+				border:1px solid black;
+			}
+			#btn{
+				font-size: 14px;
+			    color: #fc2a51;
+			    border-radius: 17px;
+			    border: 3px solid #fa4668;
+			    width: 90px;
+			    height: 20px;
+			    display: block;
+			    line-height: 20px;
+			    text-align: center;
+			    background-color: #ffbcc9;
+			    margin: 0 auto;
+			    margin-top: 40px;
+			}
+			.hide{
+				display: none;
+			}
+			.heart{
+				margin-left: 0px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -10px;
+				margin-left: -0px;
+			}
+			.animated {
+				-webkit-animation-duration: 0.6s;
+				animation-duration: 0.6s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.rollOutRight{
+				-webkit-animation-name: rollOutRight;
+    			animation-name: rollOutRight;
+			}
+			.rollOutRight2{
+				-webkit-animation-name: rollOutRight2;
+    			animation-name: rollOutRight2;
+			}
+			.rollOutTop{
+				-webkit-animation-name: rollOutTop;
+    			animation-name: rollOutTop;
+			}
+			.rollOutLeft{
+				-webkit-animation-name: rollOutLeft;
+    			animation-name: rollOutLeft;
+			}
+			.rollOutLeft2{
+				-webkit-animation-name: rollOutLeft2;
+    			animation-name: rollOutLeft2;
+			}
+			@-webkit-keyframes rollOutRight {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(60px, -20px, 0) rotate3d(0, 0, 1, 120deg);
+				    transform: translate3d(60px, -20px, 0) rotate3d(0, 0, 1, 120deg);
+				}
+			}
+			@keyframes rollOutRight {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(60px, -20px, 0) rotate3d(0, 0, 1, 120deg);
+				    transform: translate3d(60px, -20px, 0) rotate3d(0, 0, 1, 120deg);
+				}
+			}
+			@-webkit-keyframes rollOutRight2 {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(40px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				    transform: translate3d(40px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				}
+			}
+			@keyframes rollOutRight2 {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(40px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				    transform: translate3d(40px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				}
+			}
+			@-webkit-keyframes rollOutTop {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(-10px, -60px, 0) rotate3d(0, 0, 1, 0deg);
+				    transform: translate3d(-10px, -60px, 0) rotate3d(0, 0, 1, 0deg);
+				}
+			}
+			@keyframes rollOutTop {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(-10px, -60px, 0) rotate3d(0, 0, 1, 0deg);
+				    transform: translate3d(-10px, -60px, 0) rotate3d(0, 0, 1, 0deg);
+				}
+			}
+			@-webkit-keyframes rollOutLeft {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(-80px, -20px, 0) rotate3d(0, 0, 0, -120deg);
+				    transform: translate3d(-80px, -20px, 0) rotate3d(0, 0, 1, -120deg);
+				}
+			}
+			@keyframes rollOutLeft {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(-80px, -20px, 0) rotate3d(0, 0, 1, -120deg);
+				    transform: translate3d(-80px, -20px, 0) rotate3d(0, 0, 1, -120deg);
+				}
+			}
+			@-webkit-keyframes rollOutLeft2 {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(-60px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				    transform: translate3d(-60px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				}
+			}
+			@keyframes rollOutLeft2 {
+				from {
+				    opacity: 1;
+				    width: 2px;
+				}
+
+				to {
+				    opacity: 0;
+				    width: 23px;
+				    -webkit-transform: translate3d(-60px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				    transform: translate3d(-60px, -50px, 0) rotate3d(0, 0, 1, 0deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<span id="btn">赞👍</span>
+			<img src="http://me.molinblog.com/blog/img/xin.png" alt="" class="hide heart heart1">
+			<img src="http://me.molinblog.com/blog/img/xin.png" alt="" class="hide heart heart2">
+			<img src="http://me.molinblog.com/blog/img/xin.png" alt="" class="hide heart heart3">
+			<img src="http://me.molinblog.com/blog/img/xin.png" alt="" class="hide heart heart4">
+			<img src="http://me.molinblog.com/blog/img/xin.png" alt="" class="hide heart heart5">
+		</div>
+		<script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+		<script>
+			var timer;
+			function resetClass(){
+				$('.heart1').removeClass('rollOutRight').addClass('hide');
+				$('.heart2').removeClass('rollOutRight2').addClass('hide');
+				$('.heart3').removeClass('rollOutTop').addClass('hide');
+				$('.heart4').removeClass('rollOutLeft').addClass('hide');
+				$('.heart5').removeClass('rollOutLeft2').addClass('hide');
+				clearTimeout(timer);
+			};
+			function addAnimate(){
+				$('.heart1').removeClass('hide').addClass('animated rollOutRight');
+			    $('.heart2').removeClass('hide').addClass('animated rollOutRight2');
+			    $('.heart3').removeClass('hide').addClass('animated rollOutTop');
+			    $('.heart4').removeClass('hide').addClass('animated rollOutLeft');
+			    $('.heart5').removeClass('hide').addClass('animated rollOutLeft2');
+			}
+			$('#btn').on('click',function(){
+				addAnimate();
+			    timer = setTimeout(resetClass, 1000);
+			})
+		</script>
+	</body>
+</html>
